@@ -23,16 +23,15 @@ router.post("/create-user", async (req, res) => {
     .json("Usuario creado exitosamente " + "token: " + token);
 });
 //RUTA PARA VER UN USUARIO
-router.get("/user-details",async(req,res) =>{
-  const user = await User.findById(req.query.id)
-  console.log({data:user})
-  return res.status(200).json({data:user})
-  
-})
+router.get("/user-details", async (req, res) => {
+  const user = await User.findById(req.query.id);
+  console.log({ data: user });
+  return res.status(200).json({ data: user });
+});
 //RUTA PARA VER LOS USUARIOS
 router.get("/get-users", async (req, res) => {
   const users = await User.find();
-  return res.status(200).json( {data:users} );
+  return res.status(200).json({ data: users });
 });
 
 //RUTA PARA ELIMINAR LOS UUSARIOS
@@ -64,6 +63,7 @@ router.post("/login", async (req, res) => {
     cc: user.cc,
     age: user.age,
     numberPhone: user.numberPhone,
+    query: user.query,
   };
   console.log(payload);
   const token = jwt.sign(payload, "secretkey");
