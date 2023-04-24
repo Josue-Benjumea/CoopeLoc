@@ -34,7 +34,7 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-, "src/interfaces/users.js"  ],
+, "src/interfaces/users.js", "src/functions/functions.js"  ],
   "exclude": [
     "node_modules"
   ]

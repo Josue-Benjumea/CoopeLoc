@@ -10,6 +10,7 @@ const userSchema = new Schema(
     email: { type: String, required: true },
     password: { type: String, required: true },
     numberPhone: { type: Number, required: true },
+    query: { type: String, required: true },
   },
   {
     versionKey: false,

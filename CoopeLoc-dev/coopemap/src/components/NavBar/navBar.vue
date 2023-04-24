@@ -12,7 +12,14 @@
       ><router-link style="color: white; text-decoration: none" to="/map"
         ><v-icon color="#00E3FF" class="m-3">fas fa-earth-americas</v-icon
         >CoopeMaps</router-link
-      ></v-btn
+      ></v-btn> 
+        <v-btn
+      ><router-link style="color: white; text-decoration: none" to="/main"
+        ><v-icon color="#00E3FF" class="m-3">fas fa-folder</v-icon
+        >Admin</router-link
+      ></v-btn> 
+      
+      
     >
   </v-app-bar>
 </template>
