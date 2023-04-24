@@ -12,10 +12,12 @@
             Integrated Geolocation
           </h1>
           <p class="grey--text" style="color: grey">
-            ⚠🔰Please enable location⚠🔰 In this application you will be able to search to different destinations on the map, 
-            the results will be obtained based on your location, so it will be important to enable it, you will be able to 
-            trace routes, consult different destinations, redirect to your location in real time, and show duration and 
-            distance between points. 
+            ⚠🔰Please enable location⚠🔰 In this application you will be able to
+            search to different destinations on the map, the results will be
+            obtained based on your location, so it will be important to enable
+            it, you will be able to trace routes, consult different
+            destinations, redirect to your location in real time, and show
+            duration and distance between points.
           </p>
           <hr style="color: aqua; box-shadow: aqua 0px -50px 50px 26px" />
         </v-col>

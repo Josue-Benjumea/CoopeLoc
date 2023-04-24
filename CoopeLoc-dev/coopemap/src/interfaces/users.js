@@ -1,8 +1,7 @@
-const mongoose = require ("mongoose");
+const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const userSchema = new Schema(
   {
-    
     cc: { type: Number, required: true },
     firtsName: { type: String, required: true },
     lastName: { type: String, required: true },
@@ -14,7 +13,7 @@ const userSchema = new Schema(
   },
   {
     versionKey: false,
-    timeseries: true
+    timeseries: true,
   }
 );
 

@@ -24,16 +24,15 @@
           :class="
             place.id === activePlace
               ? 'btn btn-outline-light'
-              : 'btn-outline-primary'"
-              @click.self="getRouteDirections(place)"
+              : 'btn-outline-primary'
+          "
+          @click.self="getRouteDirections(place)"
         >
           Trazar Ruta
         </button>
-        
       </div>
     </li>
   </ul>
-
 </template>
 
 <style scoped>

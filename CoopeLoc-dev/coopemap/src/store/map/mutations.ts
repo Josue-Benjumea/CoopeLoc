@@ -8,16 +8,17 @@ const mutation: MutationTree<MapState> = {
     state.map = map;
   },
 
-setDistanceDuration(state,{distance,duration}:{distance:number,duration:number}){
-  
-  let kms = distance / 1000
-    kms = Math.round(kms * 100)
-    kms /= 100
-  
-  state.distance = kms
-  state.duration = Math.floor(duration / 60 )
-}, 
+  setDistanceDuration(
+    state,
+    { distance, duration }: { distance: number; duration: number }
+  ) {
+    let kms = distance / 1000;
+    kms = Math.round(kms * 100);
+    kms /= 100;
 
+    state.distance = kms;
+    state.duration = Math.floor(duration / 60);
+  },
 
   setPlaceMarkers(state, places: Feature[]) {
     if (!state.map) return;
@@ -45,13 +46,12 @@ setDistanceDuration(state,{distance,duration}:{distance:number,duration:number})
       state.markers.push(marker);
     }
 
-    if(state.map.getLayer('RouteString')){
-      state.map.removeLayer('RouteString')
-      state.map.removeSource('RouteString')
-      state.distance = undefined
-      state.duration = undefined
+    if (state.map.getLayer("RouteString")) {
+      state.map.removeLayer("RouteString");
+      state.map.removeSource("RouteString");
+      state.distance = undefined;
+      state.duration = undefined;
     }
-
   },
 
   setRouteLine(state, coords: number[][]) {
@@ -75,45 +75,41 @@ setDistanceDuration(state,{distance,duration}:{distance:number,duration:number})
     const sourceData: mapboxgl.AnySourceData = {
       type: "geojson",
       data: {
-        type:'FeatureCollection',
+        type: "FeatureCollection",
         features: [
           {
-            type:'Feature',
+            type: "Feature",
             properties: {},
             geometry: {
               type: "LineString",
-              coordinates: coords
+              coordinates: coords,
             },
           },
         ],
       },
     };
 
-    if(state.map?.getLayer('RouteString')){
-      state.map.removeLayer('RouteString')
-      state.map.removeSource('RouteString')
+    if (state.map?.getLayer("RouteString")) {
+      state.map.removeLayer("RouteString");
+      state.map.removeSource("RouteString");
     }
 
-    state.map?.addSource('RouteString', sourceData)
+    state.map?.addSource("RouteString", sourceData);
 
     state.map?.addLayer({
-      id:'RouteString',
-      type:'line',
-      source:'RouteString',
-      layout:{
-        'line-cap':'round',
-        'line-join':'round',
-
+      id: "RouteString",
+      type: "line",
+      source: "RouteString",
+      layout: {
+        "line-cap": "round",
+        "line-join": "round",
       },
-      paint:{
-        "line-color": 'blue',
+      paint: {
+        "line-color": "blue",
         "line-width": 3,
-        
-      }
-    })
+      },
+    });
   },
-
- 
 };
 
 export default mutation;

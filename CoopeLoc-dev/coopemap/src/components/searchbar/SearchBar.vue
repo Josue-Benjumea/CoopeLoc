@@ -3,18 +3,14 @@
 <template>
   <div class="searchbar-container">
     <input
-    id="escrib"
+      id="escrib"
       class="form-control"
       type="text"
       placeholder="Buscar... Ejm:Medellin"
       v-model="searchTerm"
     />
-    
-    
-    <SearchResults></SearchResults>
 
-    
-    
+    <SearchResults></SearchResults>
   </div>
 </template>
 

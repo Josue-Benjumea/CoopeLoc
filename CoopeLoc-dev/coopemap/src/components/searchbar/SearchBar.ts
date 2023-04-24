@@ -7,19 +7,16 @@ import placesModule from "@/store/places";
 import actions from "@/store/places/actions";
 import { Feature } from "@/interfaces/places";
 
-
-export default defineComponent(
-  {
+export default defineComponent({
   name: "SearchBar",
-  components: { SearchResults},
-  
+  components: { SearchResults },
+
   setup() {
     const debounceValued = ref("");
     const debounceValued2 = ref("");
     const debounceTimeOut = ref();
-    const {searchPlacesByTerm,search} = usePlacesStore()
-    let  defSearch:any
-       
+    const { searchPlacesByTerm, search } = usePlacesStore();
+    let defSearch: any;
 
     return {
       defSearch,
@@ -47,9 +44,9 @@ export default defineComponent(
 
           debounceTimeOut.value = setTimeout(() => {
             debounceValued2.value = val;
-              console.log(val);
-              search(val)
-              defSearch = val
+            console.log(val);
+            search(val);
+            defSearch = val;
           }, 500);
         },
       }),

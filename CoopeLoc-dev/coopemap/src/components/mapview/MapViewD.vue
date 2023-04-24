@@ -11,10 +11,11 @@
     </div>
   </div>
 
-  <div v-show="isUserlocationReady" class="map-container" ref="mapElement">
-  </div>
-
-
+  <div
+    v-show="isUserlocationReady"
+    class="map-container"
+    ref="mapElement"
+  ></div>
 </template>
 
 <style scoped>
@@ -33,6 +34,5 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  
 }
 </style>

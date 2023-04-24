@@ -1,9 +1,5 @@
 import { defineComponent } from "vue";
 
-export default defineComponent(
-    {
-    name: "FormD",
-   
-   
-  });
-  
+export default defineComponent({
+  name: "FormD",
+});

@@ -1,4 +1,3 @@
-
 <template>
   <form class="myf">
     <div class="form-group">
@@ -22,7 +21,7 @@
         required
       />
     </div>
-     <div class="form-group">
+    <div class="form-group">
       <label for="Telefono">Telefono</label>
       <input
         type="number"
@@ -32,7 +31,7 @@
         required
       />
     </div>
-     <div class="form-group">
+    <div class="form-group">
       <label for="ciudad">Ciudad</label>
       <input
         type="text"
@@ -49,9 +48,7 @@
         class="form-control"
         id="Ruta"
         placeholder="Ruta"
-       value=     
-      required
-     
+        value="required"
       />
     </div>
     <button type="submit" class="btn btn-primary m-3">Submit</button>

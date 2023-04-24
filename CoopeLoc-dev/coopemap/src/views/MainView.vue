@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-lg-8 offset-lg-2">
+    <div class="col-lg-10 offset-lg-1">
       <div class="table-responsive">
         <table class="table table-bordered table-hover bg-light">
           <thead>
@@ -11,6 +11,7 @@
               <th>Apellido</th>
               <th>Email</th>
               <th>Celular</th>
+              <th>Busqueda</th>
             </tr>
           </thead>
           <tbody class="table-group-divider" id="contenido">
@@ -21,16 +22,17 @@
               <td>{{ user.lastName }}</td>
               <td>{{ user.email }}</td>
               <td>{{ user.numberPhone }}</td>
+              <td>{{ user.query }}</td>
               <td>
                 <router-link
                   :to="{ path: 'edit/' + user._id }"
-                  class="btn btn-warning"
+                  class="btn btn-warning btn-sm"
                 >
                   <i class="fa-solid fa-edit"></i>
                 </router-link>
                 &nbsp;
                 <button
-                  class="btn btn-danger"
+                  class="btn btn-danger btn-sm"
                   v-on:click="this.delete(user._id)"
                 >
                   <i class="fa-solid fa-trash"></i>
@@ -73,7 +75,6 @@ export default {
       }).then((result) => {
         if (result.isConfirmed) {
           axios.delete(`http://localhost:5400/users/delete-user?id=${id}`);
-          location.reload
 
           Swal.fire(
             "Borrado",
@@ -81,6 +82,8 @@ export default {
             "success"
           );
         }
+
+        this.getUsers();
       });
     },
   },

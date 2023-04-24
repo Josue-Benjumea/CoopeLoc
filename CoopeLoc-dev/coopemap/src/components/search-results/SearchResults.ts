@@ -3,10 +3,8 @@ import { Feature } from "@/interfaces/places";
 import { defineComponent, ref, watch } from "vue";
 import SearchBar from "../searchbar/SearchBar";
 
-
 export default defineComponent({
   name: "SearchResults",
-
 
   setup() {
     const { isLoadingPlaces, places, userLocation } = usePlacesStore();

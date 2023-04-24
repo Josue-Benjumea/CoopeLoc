@@ -1,7 +1,5 @@
 <template>
-  <button v-if="insBtnReady"
-  class="btn" 
-  @click="btnLocationClick">
+  <button v-if="insBtnReady" class="btn" @click="btnLocationClick">
     Ir A Tu ubicacion
   </button>
 </template>
@@ -17,7 +15,9 @@ export default defineComponent({
     const { map, isMapready } = useMapStore();
 
     return {
-    insBtnReady:computed<boolean>(()=>isUserlocationReady.value && isMapready.value),
+      insBtnReady: computed<boolean>(
+        () => isUserlocationReady.value && isMapready.value
+      ),
       btnLocationClick: () => {
         map.value?.flyTo({
           center: userLocation.value!,
@@ -34,6 +34,6 @@ button {
   position: fixed;
   top: 30px;
   right: 30px;
-  background-color:aqua ;
+  background-color: aqua;
 }
 </style>
